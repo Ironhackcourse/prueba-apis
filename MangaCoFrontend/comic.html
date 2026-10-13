@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic - MangaCo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">📚 MangaCo</a>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#comics-section">Comics</a>
+                <a href="index.html#series-section">Series</a>
+                <a href="index.html#authors-section">Autores</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="comicDetail" class="detail-container">
+            <div class="loading">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 MangaCo</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/comic-detail.js"></script>
+</body>
+</html>
