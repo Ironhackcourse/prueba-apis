@@ -31,6 +31,11 @@ async function initComicSelects() {
                 .map(g => `<option value="${g.idGenre}">${escapeHtml(g.nameGenre)}</option>`)
                 .join('');
         }
+        const genreFilter = document.getElementById('genreFilter');
+        if (genreFilter) {
+            genreFilter.innerHTML = '<option value="">Todos</option>' +
+                genres.map(g => `<option value="${g.idGenre}">${escapeHtml(g.nameGenre)}</option>`).join('');
+        }
     } catch (err) {
         console.error('No se pudieron cargar los catálogos del cómic', err);
     }
@@ -39,15 +44,28 @@ async function initComicSelects() {
 function initComicEvents() {
     document.getElementById('btnNewComic').addEventListener('click', () => openComicModal());
     document.getElementById('form-comic').addEventListener('submit', onSubmitComic);
+    const genreFilter = document.getElementById('genreFilter');
+    if (genreFilter) {
+        genreFilter.addEventListener('change', loadComics);
+    }
 }
 
 async function loadComics() {
     const seriesId = getQueryParam('seriesId');
+    const genreFilter = document.getElementById('genreFilter');
+    const genreId = genreFilter ? genreFilter.value : '';
 
     try {
-        const comics = seriesId
+        let comics = seriesId
             ? await comicService.findBySeries(seriesId)
             : await comicService.findAll();
+
+        if (genreId) {
+            comics = (comics || []).filter(c => {
+                if (!c.genres || !Array.isArray(c.genres)) return false;
+                return c.genres.some(g => String(g.idGenre) === String(genreId));
+            });
+        }
 
         if (!comics || comics.length === 0) {
             renderEmpty('comicsList', 'No hay cómics todavía');

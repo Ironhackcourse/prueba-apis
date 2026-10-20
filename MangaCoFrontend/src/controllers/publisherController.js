@@ -14,6 +14,11 @@ async function initPublisherSelects() {
     try {
         const countries = await metadataService.countries.findAll({ enabled: true });
         populateSelect(document.getElementById('countryId'), countries, 'idCountry', 'nameCountry', '— Selecciona un país —');
+        const countryFilter = document.getElementById('countryFilter');
+        if (countryFilter) {
+            countryFilter.innerHTML = '<option value="">Todos</option>' +
+                countries.map(c => `<option value="${c.idCountry}">${escapeHtml(c.nameCountry)}</option>`).join('');
+        }
     } catch (err) {
         console.error('No se pudieron cargar los países', err);
     }
@@ -22,15 +27,21 @@ async function initPublisherSelects() {
 function initPublisherEvents() {
     document.getElementById('btnNewPublisher').addEventListener('click', () => openPublisherModal());
     document.getElementById('form-publisher').addEventListener('submit', onSubmitPublisher);
+    const countryFilter = document.getElementById('countryFilter');
+    if (countryFilter) {
+        countryFilter.addEventListener('change', loadPublishers);
+    }
 }
 
 async function loadPublishers() {
-    const countryId = getQueryParam('countryId');
+    const queryCountryId = getQueryParam('countryId');
+    const countryFilter = document.getElementById('countryFilter');
+    const filterCountryId = countryFilter ? countryFilter.value : (queryCountryId || '');
     const container = document.getElementById('publishersList');
 
     try {
-        const publishers = countryId
-            ? await publisherService.findByCountry(countryId)
+        let publishers = filterCountryId
+            ? await publisherService.findByCountry(filterCountryId)
             : await publisherService.findAll();
 
         if (!publishers || publishers.length === 0) {

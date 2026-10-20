@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header class="navbar">
+            <header class="navbar">
         <div class="container">
             <a href="index.html" class="logo">📚 MangaCo</a>
             <nav class="nav-links">
@@ -25,11 +25,19 @@
     <main>
         <section class="section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header" style="margin-bottom:1.5rem;">
                     <h2 class="section-title">Editoriales</h2>
                     <button type="button" class="btn btn-primary" id="btnNewPublisher">➕ Nueva Editorial</button>
                 </div>
-                <div id="publishersList" class="grid grid-4"></div>
+                <div class="filters">
+                    <div>
+                        <label for="countryFilter">Filtrar por país:</label>
+                        <select id="countryFilter">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="publishersList" class="grid grid-4" style="margin-top:2rem;"></div>
             </div>
         </section>
     </main>

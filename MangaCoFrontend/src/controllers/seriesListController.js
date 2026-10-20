@@ -27,18 +27,48 @@ async function initSeriesSelects() {
 function initSeriesEvents() {
     document.getElementById('btnNewSeries').addEventListener('click', () => openSeriesModal());
     document.getElementById('form-series').addEventListener('submit', onSubmitSeries);
+    
+    const letterFilter = document.getElementById('seriesLetterFilter');
+    if (letterFilter) {
+        letterFilter.addEventListener('click', (e) => {
+            if (e.target.classList.contains('btn-letter')) {
+                letterFilter.querySelectorAll('.btn-letter').forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+                loadSeries();
+            }
+        });
+    }
 }
 
 async function loadSeries() {
     const categoryId = getQueryParam('categoryId');
     const status = getQueryParam('status');
+    const activeLetterBtn = document.querySelector('#seriesLetterFilter .btn-letter.active');
+    const letterFilter = activeLetterBtn ? activeLetterBtn.dataset.letter : '';
 
     try {
         const params = {};
         if (categoryId) params.categoryId = categoryId;
         if (status) params.status = status;
 
-        const series = await seriesService.findAll(params);
+        let series = await seriesService.findAll(params);
+
+        // Ordenar alfabéticamente por título
+        series = (series || []).sort((a, b) => {
+            const ta = (a.title || '').toLowerCase();
+            const tb = (b.title || '').toLowerCase();
+            return ta.localeCompare(tb);
+        });
+
+        // Filtrar por letra inicial
+        if (letterFilter) {
+            series = series.filter(s => {
+                const title = (s.title || '').trim();
+                if (!title) return false;
+                const first = title.charAt(0).toUpperCase();
+                return first === letterFilter;
+            });
+        }
 
         if (!series || series.length === 0) {
             renderEmpty('seriesList', 'No hay series todavía');

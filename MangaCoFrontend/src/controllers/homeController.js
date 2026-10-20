@@ -3,7 +3,6 @@
 // ==================================================
 
 document.addEventListener('DOMContentLoaded', async () => {
-    initSearch();
     await Promise.all([
         loadFeaturedSeries(),
         loadLatestComics(),
@@ -11,23 +10,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadGenres(),
     ]);
 });
-
-function initSearch() {
-    const input = document.getElementById('globalSearch');
-    const btn = document.getElementById('searchBtn');
-
-    const goToSearch = () => {
-        const q = input.value.trim();
-        if (q) {
-            window.location.href = `index.html?search=${encodeURIComponent(q)}#comics-section`;
-        }
-    };
-
-    btn.addEventListener('click', goToSearch);
-    input.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') goToSearch();
-    });
-}
 
 async function loadFeaturedSeries() {
     const container = document.getElementById('featuredSeries');

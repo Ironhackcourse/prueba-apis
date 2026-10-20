@@ -22,15 +22,39 @@ async function initAuthorSelects() {
 function initAuthorEvents() {
     document.getElementById('btnNewAuthor').addEventListener('click', () => openAuthorModal());
     document.getElementById('form-author').addEventListener('submit', onSubmitAuthor);
+    
+    const letterFilter = document.getElementById('authorLetterFilter');
+    if (letterFilter) {
+        letterFilter.addEventListener('click', (e) => {
+            if (e.target.classList.contains('btn-letter')) {
+                letterFilter.querySelectorAll('.btn-letter').forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+                loadAuthors();
+            }
+        });
+    }
 }
 
 async function loadAuthors() {
-    const countryId = getQueryParam('countryId');
-
     try {
-        const authors = countryId
-            ? await authorService.findByCountry(countryId)
-            : await authorService.findAll();
+        let authors = await authorService.findAll();
+        const activeLetterBtn = document.querySelector("#authorLetterFilter .btn-letter.active");
+        const letterFilter = activeLetterBtn ? activeLetterBtn.dataset.letter : "";
+
+        authors = (authors || []).sort((a, b) => {
+            const fullA = `${a.nameAuthor || ""} ${a.lastnameAuthor || ""}`.toLowerCase();
+            const fullB = `${b.nameAuthor || ""} ${b.lastnameAuthor || ""}`.toLowerCase();
+            return fullA.localeCompare(fullB);
+        });
+
+        if (letterFilter) {
+            authors = authors.filter(a => {
+                const fullName = `${a.nameAuthor || ""} ${a.lastnameAuthor || ""}`.trim();
+                if (!fullName) return false;
+                const first = fullName.charAt(0).toUpperCase();
+                return first === letterFilter;
+            });
+        }
 
         if (!authors || authors.length === 0) {
             renderEmpty('authorsList', 'No hay autores todavía');
