@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editoriales - MangaCo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">📚 MangaCo</a>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="comic-list.html">Comics</a>
+                <a href="series-list.html">Series</a>
+                <a href="author-list.html">Autores</a>
+                <a href="publisher.html" class="active">Editoriales</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Editoriales</h2>
+                    <button type="button" class="btn btn-primary" id="btnNewPublisher">➕ Nueva Editorial</button>
+                </div>
+                <div id="publishersList" class="grid grid-4"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal genérico de Editorial -->
+    <div id="modalPublisher" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalPublisherTitle">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalPublisherTitle">Nueva Editorial</h2>
+                <button type="button" class="modal-close" data-close-modal aria-label="Cerrar">&times;</button>
+            </div>
+            <form id="form-publisher">
+                <div class="modal-body">
+                    <input type="hidden" id="publisherId" name="id">
+                    <div class="form-group">
+                        <label for="namePublisher">Nombre *</label>
+                        <input type="text" id="namePublisher" name="namePublisher" maxlength="150" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="countryId">País</label>
+                        <select id="countryId" name="countryId">
+                            <option value="">— Selecciona un país —</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="website">Sitio web</label>
+                        <input type="url" id="website" name="website" maxlength="255" placeholder="https://...">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-close-modal>Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 MangaCo</p>
+        </div>
+    </footer>
+
+    <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="src/utils/domUtils.js"></script>
+    <script src="src/utils/crudUtils.js"></script>
+    <script src="src/services/authorService.js"></script>
+    <script src="src/services/comicService.js"></script>
+    <script src="src/services/seriesService.js"></script>
+    <script src="src/services/publisherService.js"></script>
+    <script src="src/services/metadataService.js"></script>
+    <script src="src/controllers/publisherController.js"></script>
+</body>
+</html>

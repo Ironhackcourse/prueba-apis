@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        const comic = await api.getComicById(id);
+        const comic = await comicService.findById(id);
         renderComic(comic);
     } catch (err) {
         renderError('comicDetail', err.message);
@@ -43,7 +43,7 @@ function renderComic(c) {
         </div>
 
         <div class="detail-hero">
-            <div class="detail-cover">📚</div>
+            <div class="detail-cover">${coverImage(c.coverUrl, c.title || c.seriesTitle, '📚')}</div>
 
             <div class="detail-info">
                 <h1>${escapeHtml(c.title || c.seriesTitle)}</h1>
@@ -86,6 +86,7 @@ function renderComic(c) {
                         <span class="meta-label">Publicación</span>
                         <span class="meta-value">${formatDate(c.releaseDate)}</span>
                     </div>
+                </div>
                 </div>
 
                 <h2>Autores</h2>

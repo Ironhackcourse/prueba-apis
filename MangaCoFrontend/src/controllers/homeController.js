@@ -32,7 +32,7 @@ function initSearch() {
 async function loadFeaturedSeries() {
     const container = document.getElementById('featuredSeries');
     try {
-        const series = await api.getSeries();
+        const series = await seriesService.findAll();
         const featured = series.slice(0, 4);
 
         if (featured.length === 0) {
@@ -42,7 +42,7 @@ async function loadFeaturedSeries() {
 
         container.innerHTML = featured.map(s => `
             <a href="series.html?id=${s.idSeries}" class="card">
-                <div class="card-cover">📖</div>
+                <div class="card-cover">${coverImage(s.coverUrl, s.title, '📖')}</div>
                 <div class="card-body">
                     <h3 class="card-title">${escapeHtml(s.title)}</h3>
                     <p class="card-subtitle">${escapeHtml(s.categoryName || 'Sin categoría')}</p>
@@ -61,7 +61,7 @@ async function loadFeaturedSeries() {
 async function loadLatestComics() {
     const container = document.getElementById('latestComics');
     try {
-        const comics = await api.getComics();
+        const comics = await comicService.findAll();
         const latest = comics.slice(-8).reverse().slice(0, 4);
 
         if (latest.length === 0) {
@@ -71,7 +71,7 @@ async function loadLatestComics() {
 
         container.innerHTML = latest.map(c => `
             <a href="comic.html?id=${c.idComic}" class="card">
-                <div class="card-cover">📚</div>
+                <div class="card-cover">${coverImage(c.coverUrl, c.title || c.seriesTitle, '📚')}</div>
                 <div class="card-body">
                     <h3 class="card-title">${escapeHtml(c.title || c.seriesTitle)}</h3>
                     <p class="card-subtitle">${escapeHtml(c.seriesTitle)}</p>
@@ -90,7 +90,7 @@ async function loadLatestComics() {
 async function loadFeaturedAuthors() {
     const container = document.getElementById('featuredAuthors');
     try {
-        const authors = await api.getAuthors();
+        const authors = await authorService.findAll();
         const featured = authors.slice(0, 4);
 
         if (featured.length === 0) {
@@ -100,7 +100,7 @@ async function loadFeaturedAuthors() {
 
         container.innerHTML = featured.map(a => `
             <a href="author.html?id=${a.idAuthor}" class="card">
-                <div class="card-cover">✍️</div>
+                <div class="card-cover">${coverImage(a.photoUrl, `${a.nameAuthor} ${a.lastnameAuthor}`, '✍️')}</div>
                 <div class="card-body">
                     <h3 class="card-title">${escapeHtml(a.nameAuthor)} ${escapeHtml(a.lastnameAuthor)}</h3>
                     <p class="card-subtitle">${escapeHtml(a.countryName || 'Sin país')}</p>
@@ -118,7 +118,7 @@ async function loadFeaturedAuthors() {
 async function loadGenres() {
     const container = document.getElementById('genresList');
     try {
-        const genres = await api.getGenres();
+        const genres = await metadataService.genres.findAll();
         if (genres.length === 0) {
             container.innerHTML = '<p class="empty-state">No hay géneros</p>';
             return;

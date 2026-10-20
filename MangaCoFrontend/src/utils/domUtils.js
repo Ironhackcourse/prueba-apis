@@ -59,6 +59,18 @@ function debounce(fn, delay = 300) {
     };
 }
 
+const PLACEHOLDER_IMG = 'assets/img/placeholder.svg';
+
+function coverImage(url, alt = '', fallbackEmoji = '') {
+    if (url) {
+        return `<img src="${escapeHtml(url)}" alt="${escapeHtml(alt)}" loading="lazy" onerror="this.onerror=null;this.src='${PLACEHOLDER_IMG}';">`;
+    }
+    if (fallbackEmoji) {
+        return fallbackEmoji;
+    }
+    return `<img src="${PLACEHOLDER_IMG}" alt="${escapeHtml(alt)}" loading="lazy">`;
+}
+
 function escapeHtml(str) {
     if (str === null || str === undefined) return '';
     return String(str)

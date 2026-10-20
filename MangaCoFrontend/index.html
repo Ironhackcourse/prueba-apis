@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
 </head>
 <body>
@@ -16,10 +16,10 @@
             <a href="index.html" class="logo">📚 MangaCo</a>
             <nav class="nav-links">
                 <a href="index.html" class="active">Inicio</a>
-                <a href="index.html#comics-section">Comics</a>
-                <a href="index.html#series-section">Series</a>
-                <a href="index.html#authors-section">Autores</a>
-                <a href="index.html#genres-section">Géneros</a>
+                <a href="comic-list.html">Comics</a>
+                <a href="series-list.html">Series</a>
+                <a href="author-list.html">Autores</a>
+                <a href="publisher.html">Editoriales</a>
             </nav>
         </div>
     </header>
@@ -42,7 +42,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Series destacadas</h2>
-                    <a href="#" class="section-link">Ver todas →</a>
+                    <a href="series-list.html" class="section-link">Ver todas →</a>
                 </div>
                 <div id="featuredSeries" class="grid grid-4"></div>
             </div>
@@ -53,7 +53,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Últimos comics</h2>
-                    <a href="#" class="section-link">Ver todos →</a>
+                    <a href="comic-list.html" class="section-link">Ver todos →</a>
                 </div>
                 <div id="latestComics" class="grid grid-4"></div>
             </div>
@@ -64,7 +64,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Autores populares</h2>
-                    <a href="#" class="section-link">Ver todos →</a>
+                    <a href="author-list.html" class="section-link">Ver todos →</a>
                 </div>
                 <div id="featuredAuthors" class="grid grid-4"></div>
             </div>
@@ -92,8 +92,12 @@
         <div class="spinner"></div>
     </div>
 
-    <script src="js/api.js"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/home.js"></script>
+    <script src="src/utils/domUtils.js"></script>
+    <script src="src/services/authorService.js"></script>
+    <script src="src/services/comicService.js"></script>
+    <script src="src/services/seriesService.js"></script>
+    <script src="src/services/publisherService.js"></script>
+    <script src="src/services/metadataService.js"></script>
+    <script src="src/controllers/homeController.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        const author = await api.getAuthorById(id);
+        const author = await authorService.findById(id);
         renderAuthor(author);
     } catch (err) {
         renderError('authorDetail', err.message);
@@ -28,7 +28,7 @@ function renderAuthor(a) {
         </div>
 
         <div class="detail-hero">
-            <div class="detail-cover">✍️</div>
+            <div class="detail-cover">${coverImage(a.photoUrl, `${a.nameAuthor} ${a.lastnameAuthor}`, '✍️')}</div>
 
             <div class="detail-info">
                 <h1>${escapeHtml(a.nameAuthor)} ${escapeHtml(a.lastnameAuthor)}</h1>

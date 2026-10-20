@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         const [series, comics] = await Promise.all([
-            api.getSeriesById(id),
-            api.getComicsBySeries(id),
+            seriesService.findById(id),
+            comicService.findBySeries(id),
         ]);
         renderSeries(series, comics);
     } catch (err) {
@@ -26,7 +26,7 @@ function renderSeries(s, comics) {
     const comicsHtml = (comics && comics.length > 0)
         ? comics.map(c => `
             <a href="comic.html?id=${c.idComic}" class="card">
-                <div class="card-cover">📚</div>
+                <div class="card-cover">${coverImage(c.coverUrl, c.title || 'Tomo', '📚')}</div>
                 <div class="card-body">
                     <h3 class="card-title">Vol. ${c.volume} — ${escapeHtml(c.title || 'Tomo')}</h3>
                     <div class="card-meta">
@@ -46,7 +46,7 @@ function renderSeries(s, comics) {
         </div>
 
         <div class="detail-hero">
-            <div class="detail-cover">📖</div>
+            <div class="detail-cover">${coverImage(s.coverUrl, s.title, '📖')}</div>
 
             <div class="detail-info">
                 <h1>${escapeHtml(s.title)}</h1>

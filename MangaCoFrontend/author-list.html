@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autores - MangaCo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">📚 MangaCo</a>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="comic-list.html">Comics</a>
+                <a href="series-list.html">Series</a>
+                <a href="author-list.html" class="active">Autores</a>
+                <a href="publisher.html">Editoriales</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Autores</h2>
+                    <button type="button" class="btn btn-primary" id="btnNewAuthor">➕ Nuevo Autor</button>
+                </div>
+                <div id="authorsList" class="grid grid-4"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal genérico de Autor -->
+    <div id="modalAuthor" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalAuthorTitle">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalAuthorTitle">Nuevo Autor</h2>
+                <button type="button" class="modal-close" data-close-modal aria-label="Cerrar">&times;</button>
+            </div>
+            <form id="form-author">
+                <div class="modal-body">
+                    <input type="hidden" id="authorId" name="id">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nameAuthor">Nombre *</label>
+                            <input type="text" id="nameAuthor" name="nameAuthor" maxlength="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastnameAuthor">Apellido *</label>
+                            <input type="text" id="lastnameAuthor" name="lastnameAuthor" maxlength="100" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="penName">Seudónimo</label>
+                            <input type="text" id="penName" name="penName" maxlength="150">
+                        </div>
+                        <div class="form-group">
+                            <label for="birthDate">Fecha de nacimiento</label>
+                            <input type="date" id="birthDate" name="birthDate">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="countryId">País</label>
+                        <select id="countryId" name="countryId">
+                            <option value="">— Selecciona un país —</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="photoUrl">URL de la foto</label>
+                        <input type="url" id="photoUrl" name="photoUrl" maxlength="500" placeholder="https://...">
+                    </div>
+                    <div class="form-group">
+                        <label for="biography">Biografía</label>
+                        <textarea id="biography" name="biography" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-close-modal>Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 MangaCo</p>
+        </div>
+    </footer>
+
+    <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="src/utils/domUtils.js"></script>
+    <script src="src/utils/crudUtils.js"></script>
+    <script src="src/services/authorService.js"></script>
+    <script src="src/services/comicService.js"></script>
+    <script src="src/services/seriesService.js"></script>
+    <script src="src/services/publisherService.js"></script>
+    <script src="src/services/metadataService.js"></script>
+    <script src="src/controllers/authorListController.js"></script>
+</body>
+</html>

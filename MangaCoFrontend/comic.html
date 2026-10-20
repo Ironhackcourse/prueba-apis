@@ -6,7 +6,7 @@
     <title>Comic - MangaCo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header class="navbar">
@@ -14,9 +14,10 @@
             <a href="index.html" class="logo">📚 MangaCo</a>
             <nav class="nav-links">
                 <a href="index.html">Inicio</a>
-                <a href="index.html#comics-section">Comics</a>
-                <a href="index.html#series-section">Series</a>
-                <a href="index.html#authors-section">Autores</a>
+                <a href="comic-list.html">Comics</a>
+                <a href="series-list.html">Series</a>
+                <a href="author-list.html">Autores</a>
+                <a href="publisher.html">Editoriales</a>
             </nav>
         </div>
     </header>
@@ -35,8 +36,12 @@
         </div>
     </footer>
 
-    <script src="js/api.js"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/comic-detail.js"></script>
+    <script src="src/utils/domUtils.js"></script>
+    <script src="src/services/authorService.js"></script>
+    <script src="src/services/comicService.js"></script>
+    <script src="src/services/seriesService.js"></script>
+    <script src="src/services/publisherService.js"></script>
+    <script src="src/services/metadataService.js"></script>
+    <script src="src/controllers/comicController.js"></script>
 </body>
 </html>

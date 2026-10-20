@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comics - MangaCo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">📚 MangaCo</a>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="comic-list.html" class="active">Comics</a>
+                <a href="series-list.html">Series</a>
+                <a href="author-list.html">Autores</a>
+                <a href="publisher.html">Editoriales</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Cómics</h2>
+                    <button type="button" class="btn btn-primary" id="btnNewComic">➕ Nuevo Cómic</button>
+                </div>
+                <div id="comicsList" class="grid grid-4"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal genérico de Cómic -->
+    <div id="modalComic" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalComicTitle">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalComicTitle">Nuevo Cómic</h2>
+                <button type="button" class="modal-close" data-close-modal aria-label="Cerrar">&times;</button>
+            </div>
+            <form id="form-comic">
+                <div class="modal-body">
+                    <input type="hidden" id="comicId" name="id">
+                    <div class="form-group">
+                        <label for="seriesId">Serie *</label>
+                        <select id="seriesId" name="seriesId" required>
+                            <option value="">— Selecciona una serie —</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Título</label>
+                        <input type="text" id="title" name="title" maxlength="250">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="volume">Volumen</label>
+                            <input type="number" id="volume" name="volume" min="1" step="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="isbn">ISBN</label>
+                            <input type="text" id="isbn" name="isbn" maxlength="20">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="publisherId">Editorial</label>
+                            <select id="publisherId" name="publisherId">
+                                <option value="">— Selecciona una editorial —</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="countryId">País</label>
+                            <select id="countryId" name="countryId">
+                                <option value="">— Selecciona un país —</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="formatId">Formato</label>
+                            <select id="formatId" name="formatId">
+                                <option value="">— Selecciona un formato —</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="pageCount">Nº de páginas</label>
+                            <input type="number" id="pageCount" name="pageCount" min="1" step="1">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="releaseDate">Fecha de publicación</label>
+                            <input type="date" id="releaseDate" name="releaseDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="genreIds">Géneros</label>
+                            <select id="genreIds" name="genreIds" multiple size="4">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="coverUrl">URL de la portada</label>
+                        <input type="url" id="coverUrl" name="coverUrl" maxlength="500" placeholder="https://...">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-close-modal>Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 MangaCo</p>
+        </div>
+    </footer>
+    <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="src/utils/domUtils.js"></script>
+    <script src="src/utils/crudUtils.js"></script>
+    <script src="src/services/authorService.js"></script>
+    <script src="src/services/comicService.js"></script>
+    <script src="src/services/seriesService.js"></script>
+    <script src="src/services/publisherService.js"></script>
+    <script src="src/services/metadataService.js"></script>
+    <script src="src/controllers/comicListController.js"></script>
+</body>
+</html>
