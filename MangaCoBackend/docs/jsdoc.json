@@ -1,0 +1,18 @@
+{
+    "source": {
+        "include": ["api-references.js"],
+        "includePattern": ".+\\.js$"
+    },
+    "opts": {
+        "destination": "./api",
+        "recurse": false,
+        "tutorials": "./tutorials"
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false,
+        "default": {
+            "includeDate": true
+        }
+    }
+}

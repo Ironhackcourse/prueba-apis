@@ -1,0 +1,22 @@
+{
+  "name": "mangaco-backend-api-docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Generador de documentación de la API REST del backend MangaCo (JS + JSDoc).",
+  "scripts": {
+    "generate": "node generate-api-references.js",
+    "jsdoc": "jsdoc -c jsdoc.json -R README.md",
+    "docs": "npm run generate && npm run jsdoc"
+  },
+  "keywords": [
+    "mangaco",
+    "api",
+    "jsdoc"
+  ],
+  "author": "MangaCo Team",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "jsdoc": "^4.0.5"
+  }
+}

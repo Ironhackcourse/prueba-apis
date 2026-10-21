@@ -1,0 +1,11 @@
+# Dependencias del tooling de documentación
+node_modules/
+
+# Salida HTML generada por JSDoc
+api/
+
+# Archivo JS autogenerado desde los controladores .java
+api-references.js
+
+# Logs
+npm-debug.log*
