@@ -16,7 +16,7 @@ public interface PublisherRepository extends JpaRepository<Publisher, Long> {
 
     List<Publisher> findAllByEnabledFalse();
 
-    List<Publisher> findByCountryId(Long countryId);
+    List<Publisher> findByCountry_Id(Long countryId);
 
     boolean existsByNamePublisherIgnoreCase(String namePublisher);
 }

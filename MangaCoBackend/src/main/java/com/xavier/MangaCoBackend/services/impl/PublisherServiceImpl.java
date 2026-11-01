@@ -6,6 +6,8 @@ import com.xavier.MangaCoBackend.entity.Publisher;
 import com.xavier.MangaCoBackend.exception.DuplicateResourceException;
 import com.xavier.MangaCoBackend.exception.ResourceNotFoundException;
 import com.xavier.MangaCoBackend.mapper.PublisherMapper;
+import com.xavier.MangaCoBackend.entity.Country;
+import com.xavier.MangaCoBackend.repository.CountryRepository;
 import com.xavier.MangaCoBackend.repository.PublisherRepository;
 import com.xavier.MangaCoBackend.services.PublisherService;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +21,7 @@ import java.util.List;
 public class PublisherServiceImpl implements PublisherService {
 
     private final PublisherRepository publisherRepository;
+    private final CountryRepository countryRepository;
     private final PublisherMapper publisherMapper;
 
     @Override
@@ -38,7 +41,7 @@ public class PublisherServiceImpl implements PublisherService {
     @Override
     @Transactional(readOnly = true)
     public List<PublisherResponse> findByCountry(Long countryId) {
-        return publisherRepository.findByCountryId(countryId)
+        return publisherRepository.findByCountry_Id(countryId)
                 .stream()
                 .map(publisherMapper::toResponse)
                 .toList();
@@ -55,6 +58,12 @@ public class PublisherServiceImpl implements PublisherService {
         return publisherMapper.toResponse(publisher);
     }
 
+    private Country resolveCountry(Long countryId) {
+        return countryRepository.findById(countryId)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "País no encontrado con id: " + countryId));
+    }
+
     @Override
     @Transactional
     public PublisherResponse create(PublisherRequest request) {
@@ -66,11 +75,12 @@ public class PublisherServiceImpl implements PublisherService {
                     } else {
                         throw new DuplicateResourceException(
                                 "Ya existe una editorial deshabilitada con el nombre: '" + request.namePublisher() +
-                                "'. Reactívela con PATCH /api/v1/publishers/" + existing.getId() + "/enable");
+                                        "'. Reactívela con PATCH /api/v1/publishers/" + existing.getId() + "/enable");
                     }
                 });
 
-        Publisher publisher = publisherMapper.toEntity(request);
+        Country country = resolveCountry(request.countryId());
+        Publisher publisher = publisherMapper.toEntity(request, country);
         return publisherMapper.toResponse(publisherRepository.save(publisher));
     }
 
@@ -79,7 +89,8 @@ public class PublisherServiceImpl implements PublisherService {
     public PublisherResponse update(Long id, PublisherRequest request) {
         Publisher publisher = publisherRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Publisher no encontrado con id: " + id));
-        publisherMapper.updateEntity(publisher, request);
+        Country country = resolveCountry(request.countryId());
+        publisherMapper.updateEntity(publisher, request, country);
         return publisherMapper.toResponse(publisherRepository.save(publisher));
     }
 

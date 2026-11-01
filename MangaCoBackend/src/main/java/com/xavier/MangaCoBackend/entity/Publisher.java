@@ -22,8 +22,9 @@ public class Publisher {
      @Column(name = "name_publisher", nullable = false, unique = true, length = 150)
     private String namePublisher;
 
-    @Column(name = "country_id")
-    private Long countryId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "country_id")
+    private Country country;
 
     @Column(name = "website", length = 255)
     private String website;
