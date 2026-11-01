@@ -1,4 +1,155 @@
-FRONTEND_CONTEXT.md
+# =============================================================================
+# .gitignore — MangaCo (prueba-apis-main)
+# Proyecto con Backend (Spring Boot + Maven) y Frontend (HTML/JS vanilla)
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# 1. Sistema operativo
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ---------------------------------------------------------------------------
+# 2. IDEs y editores
+# ---------------------------------------------------------------------------
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+.atom/
+*.sublime-settings
+
+# IntelliJ / Android Studio
+*.gradle/
+.build/
+
+# Eclipse
+.classpath
+.project
+.settings/
+.metadata/
+bin/
+target/
+
+# NetBeans
+nbproject/
+build/
+nb-build.xml
+nb-actions.xml
+
+# ---------------------------------------------------------------------------
+# 3. Backend — Maven / Spring Boot
+# ---------------------------------------------------------------------------
+target/
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+*.jar
+*.war
+*.ear
+*.class
+
+# Maven wrapper - SUBIR estos archivos para que ./mvnw funcione al clonar
+!.mvn/wrapper/maven-wrapper.properties
+!.mvn/wrapper/MavenWrapperDownloader.java
+
+# Spring Boot
+application*.properties
+application*.yml
+!src/main/resources/application.properties
+!src/main/resources/application.yml
+
+# ---------------------------------------------------------------------------
+# 4. Backend — JSDoc / docs generados
+# ---------------------------------------------------------------------------
+MangaCoBackend/docs/node_modules/
+MangaCoBackend/docs/api/            # Sitio HTML generado por JSDoc (no subir)
+MangaCoBackend/docs/api-references.js   # Autogenerado (no editar a mano)
+MangaCoBackend/package-lock.json
+
+# ---------------------------------------------------------------------------
+# 5. Frontend — HTML/JS vanilla (sin build, pero limpiar por si acaso)
+# ---------------------------------------------------------------------------
+MangaCoFrontend/node_modules/
+MangaCoFrontend/package-lock.json
+MangaCoFrontend/package.json
+
+# ---------------------------------------------------------------------------
+# 6. Logs
+# ---------------------------------------------------------------------------
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---------------------------------------------------------------------------
+# 7. Env / secretos
+# ---------------------------------------------------------------------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+*.crt
+secrets/
+config/secrets/
+
+# ---------------------------------------------------------------------------
+# 8. Cobertura de pruebas y reportes
+# ---------------------------------------------------------------------------
+coverage/
+.nyc_output/
+test-reports/
+surefire-reports/
+failsafe-reports/
+
+# ---------------------------------------------------------------------------
+# 9. Temp / cache
+# ---------------------------------------------------------------------------
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+.cache/
+.gradle/
+
+# ---------------------------------------------------------------------------
+# 10. Archivos de sistema específicos
+# ---------------------------------------------------------------------------
+.local/
+.venv/
+venv/
+env/
+
+# ---------------------------------------------------------------------------
+# 11. Ignorar todo lo que no sea código fuente esencial (opcional, descomentar si se quiere ser estricto)
+# ---------------------------------------------------------------------------
+# *.pdf
+# *.zip
+# *.rar
+# *.7z
+# *.tar.gz
+
 .gitignore
-API_CONTEXT.md
 AUDITORIA_BACKEND.md
+BACKEND_CONTEXT.md
+FRONTEND_CONTEXT.md
+
+# =============================================================================
+# Fin de .gitignore
+# =============================================================================
