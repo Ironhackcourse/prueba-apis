@@ -17,7 +17,8 @@ public class CorsConfig implements WebMvcConfigurer {
                         "http://127.0.0.1:5173",
                         "http://localhost:3000",
                         "http://127.0.0.1:3000",
-                        "https://mangaco-frontend.onrender.com"
+                        "https://mangaco-frontend.onrender.com",
+                        "https://prueba-apis-1.onrender.com"
                 )
                 .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
