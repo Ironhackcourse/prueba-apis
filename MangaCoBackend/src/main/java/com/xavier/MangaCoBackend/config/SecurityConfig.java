@@ -81,6 +81,9 @@ public class SecurityConfig {
                         // Todos los GET son públicos (lectura sin token, con o sin registro)
                         .requestMatchers(HttpMethod.GET, "/**").permitAll()
 
+                        // Documentación JSDoc: pública sin autenticación
+                        .requestMatchers("/docs/api/**").permitAll()
+
                         // Crear usuario (POST /api/v1/users) solo ADMIN
                         .requestMatchers(HttpMethod.POST, "/api/v1/users").hasRole("ADMIN")
 
