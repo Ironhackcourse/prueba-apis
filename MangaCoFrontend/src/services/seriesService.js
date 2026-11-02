@@ -4,7 +4,7 @@
 // ==================================================
 
 const seriesService = (() => {
-    const BASE_URL = 'http://localhost:8080/api/v1/series';
+    const BASE_URL = 'https://prueba-apis-w2fq.onrender.com/api/v1/series';
 
     async function request(url, options = {}) {
         const config = {

@@ -1,0 +1,1000 @@
+  681  EOF
+  682  ollama show qwen2.5-coder:7b
+  683  ollama pull llama3.1
+  684  cat << 'EOF' > ~/.config/opencode/opencode.jsonc
+  685  {
+  686    "$schema": "https://opencode.ai/config.json",
+  687    "model": "ollama/llama3.1",
+  688    "formatter": true,
+  689    "permissions": [
+  690      { "action": "read", "resource": "*", "effect": "allow" },
+  691      { "action": "write", "resource": "*", "effect": "allow" },
+  692      { "action": "edit", "resource": "*", "effect": "allow" },
+  693      { "action": "shell", "resource": "*", "effect": "ask" }
+  694    ]
+  695  }
+  696  EOF
+  697  cd Documentos
+  698  ls
+  699  cd IronHack
+  700  ls
+  701  cd AppRecordatorio
+  702  opencode
+  703  ollama pull qwen3:4b
+  704  nano ~/.config/opencode/opencode.jsonc
+  705  ~/.opencode/bin/opencode
+  706  ollama pull qwen2.5-coder:3b
+  707  ollama rm qwen3-coder:latest
+  708  ollama rm qwen3.5:4b
+  709  ollama rm qwen2.5-coder:1.5b
+  710  ollama rm qwen2.5-coder:1.5b-base
+  711  ollama rm qwen2.5-coder:3b
+  712  ollama rm qwen2.5-coder:7b
+  713  ollama list
+  714  ollama pull qwen2.5-coder:7b
+  715  ollama list
+  716  npm install -g opencode-ollama-toolcall-proxy
+  717  npm uninstall -g opencode-ollama-toolcall-proxy
+  718  opencode --version
+  719  which -a opencode
+  720  ollama --version
+  721  ollama list
+  722  ollama --list
+  723  ollama -list
+  724  ollama list
+  725  sudo systemctl restart ollama
+  726  opencode --model ollama/qwen3.5:2b
+  727  ollama pull qwen3.5:2b
+  728  curl -fsSL https://ollama.com/install.sh | sh
+  729  systemctl status ollama --no-pager
+  730  q
+  731  systemctl stop ollama
+  732  opencode service stop 2>/dev/null
+  733  sudo rm -f $(which opencode) 2>/dev/null
+  734  rm -rf ~/.config/opencode ~/.local/share/opencode ~/.cache/opencode
+  735  sudo systemctl stop ollama 2>/dev/null
+  736  sudo systemctl disable ollama 2>/dev/null
+  737  sudo rm -f /etc/systemd/system/ollama.service
+  738  sudo rm -f $(which ollama) 2>/dev/null
+  739  sudo rm -rf /usr/share/ollama ~/.ollama
+  740  sudo userdel ollama 2>/dev/null
+  741  sudo groupdel ollama 2>/dev/null
+  742  curl -fsSL https://ollama.com/install.sh | sh
+  743  ollama pull qwen2.5-coder:7b
+  744  sudo systemctl restart ollama
+  745  ollama pull qwen2.5-coder:7b
+  746  curl -fsSL https://opencode.ai/install.sh | bash
+  747  curl -fsSL https://opencode.ai/v2/install | bash
+  748  source ~/.bashrc
+  749  sudo systemctl disable ollama
+  750  sudo systemctl status ollama
+  751  sudo systemctl status mysql
+  752  mariadb -u root -p
+  753  ls
+  754  cd Backend
+  755  mvn spring-boot:run
+  756  opencode
+  757  cd Frontend
+  758  opencode
+  759  ollama run qwen2.5-coder:7b
+  760  opencode
+  761  sudo systemctl status ollama
+  762  sudo systemctl start ollama
+  763  cd /home/xavier/Documentos/IronHack/AppRecordatorio
+  764  opencode
+  765  sudo systemctl start ollama
+  766  sudo systemctl status ollama
+  767  ollama launch opencode --model granite4.1:3b
+  768  ollama launch opencode --model granite4.1:8b
+  769  ollama list
+  770  ollama launch opencode --model gemma4:e2b
+  771  ollama pull nomic-embed-text
+  772  sudo systemctl edit ollama
+  773  sudo systemctl stop ollama
+  774  sudo systemctl edit ollama
+  775  sudo systemctl daemon-reload && sudo systemctl restart ollama
+  776  sudo systemctl edit ollama
+  777  sudo systemctl daemon-reload && sudo systemctl restart ollama
+  778  sudo systemctl status ollama
+  779  systemctl show ollama | grep Environment
+  780  sudo systemctl edit ollama
+  781  sudo systemctl daemon-reload
+  782  sudo systemctl restart ollama
+  783  pip install aider-chat
+  784  sudo pip install aider-chat
+  785  sudo systemctl stop ollama
+  786  cd Descargas
+  787  sudo dpkg -i Bionic-1.1.9-6-x64.deb
+  788  sudo apt upgrade
+  789  nano ~/.config/opencode/opencode.json
+  790  nano ~/.config/opencode/opencode.jsonc
+  791  opencode
+  792  nano ~/.config/opencode/opencode.jsonc
+  793  opencode
+  794  sudo apt update
+  795  sudo apt install libfuse2
+  796  chmod +x ~/Descargas/LM-Studio-0.4.26-4-x64.AppImage
+  797  ~/Descargas/LM-Studio-0.4.26-4-x64.AppImage
+  798  curl -fsSL https://lmstudio.ai/install.sh | bash
+  799  sudo lms daemon up
+  800  lms daemon up
+  801  clear
+  802  # 1. Borrar los archivos de instalación descargados
+  803  rm -f ~/Descargas/LM-Studio-0.4.26-4-x64.AppImage
+  804  rm -f ~/Descargas/Bionic-1.1.9-6-x64.deb
+  805  # 2. Borrar TODOS los datos de usuario y modelos de LM Studio
+  806  rm -rf ~/.lmstudio
+  807  rm -rf ~/.cache/lm-studio
+  808  rm -rf ~/.config/LM\ Studio
+  809  # Añadir el binario de lms a tu PATH para esta sesión
+  810  export PATH="/home/xavier/.lmstudio/bin:$PATH"
+  811  # Verificar que ahora sí funciona
+  812  lms --version
+  813  rm -f ~/.local/share/applications/*bionic*
+  814  rm -f ~/.local/share/applications/*lm-studio*
+  815  rm -f ~/.local/share/applications/*LM-Studio*
+  816  rm -f /usr/share/applications/*bionic*
+  817  rm -f /usr/share/applications/*lm-studio*
+  818  sudo dpkg --purge bionic
+  819  sudo apt autoremove --purge
+  820  # Borrar la AppImage y el .deb de Descargas
+  821  rm -f ~/Descargas/LM-Studio*.AppImage
+  822  rm -f ~/Descargas/Bionic*.deb
+  823  # Borrar configuraciones, modelos y cachés
+  824  rm -rf ~/.lmstudio
+  825  rm -rf ~/.cache/lm-studio
+  826  rm -rf ~/.cache/LM-Studio
+  827  rm -rf ~/.config/LM\ Studio
+  828  rm -rf ~/.config/lm-studio
+  829  rm -rf ~/.local/share/lm-studio
+  830  rm -rf ~/.local/share/LM\ Studio
+  831  update-desktop-database ~/.local/share/applications 2>/dev/null
+  832  aider --model ollama_chat/qwen2.5-coder:7b
+  833  pip install aider-chat
+  834  opencode
+  835  nano ~/.config/opencode/opencode.json
+  836  opencode
+  837  npm install -g @voidrot/openai-featherless-compatible
+  838  npm uninstall -g @voidrot/openai-featherless-compatible
+  839  opencode
+  840  dpkg -l | grep -Ei "lm-studio|bionic|ollama"
+  841  sudo systemctl start ollama
+  842  dpkg -l | grep -Ei "lm-studio|bionic|ollama"
+  843  ls -la /usr/bin/ | grep -Ei "opencode|ollama|lms"
+  844  ls -la ~/.local/bin/ | grep -Ei "opencode|ollama|lms"
+  845  dpkg -l | grep -Ei "lm-studio|lmstudio|bionic|ollama|opencode"
+  846  find /usr /opt /home/xavier/.local -maxdepth 4 \( -iname "*lm-studio*" -o -iname "*lmstudio*" -o -iname "*bionic*" -o -iname "*ollama*" -o -iname "*opencode*" \) 2>/dev/null
+  847  ls -d /home/xavier/.* /home/xavier/.config/* /home/xavier/.cache/* /home/xavier/.local/share/* 2>/dev/null | grep -Ei "lm-studio|lmstudio|bionic|ollama|opencode"
+  848  sudo systemctl stop ollama
+  849  # Desinstalar el paquete y limpiar dependencias
+  850  sudo dpkg --purge lmstudio-bionic
+  851  sudo apt autoremove --purge -y
+  852  # Borrar el resto de archivos y carpetas que dejó
+  853  sudo rm -rf /opt/Bionic
+  854  sudo rm -rf /usr/bin/bionic
+  855  sudo rm -rf /usr/share/doc/lmstudio-bionic
+  856  sudo rm -rf /usr/share/applications/ai.elementlabs.bionic.desktop
+  857  rm -rf ~/.config/Bionic
+  858  rm -rf ~/.config/LM-Studio
+  859  rm -rf ~/.lmstudio
+  860  rm -f ~/.lmstudio-home-pointer
+  861  # Borrar carpetas de usuario, caché y estado
+  862  rm -rf ~/.opencode
+  863  rm -rf ~/.config/opencode
+  864  rm -rf ~/.cache/opencode
+  865  rm -rf ~/.local/share/opencode
+  866  rm -rf ~/.local/state/opencode
+  867  dpkg -l | grep -Ei "lm-studio|lmstudio|bionic|ollama|opencode"
+  868  find /usr /opt /home/xavier/.local -maxdepth 4 \( -iname "*lm-studio*" -o -iname "*lmstudio*" -o -iname "*bionic*" -o -iname "*ollama*" -o -iname "*opencode*" \) 2>/dev/null
+  869  ls -d /home/xavier/.* /home/xavier/.config/* /home/xavier/.cache/* /home/xavier/.local/share/* 2>/dev/null | grep -Ei "lm-studio|lmstudio|bionic|ollama|opencode"
+  870  # Detener y deshabilitar el servicio
+  871  sudo systemctl stop ollama
+  872  sudo systemctl disable ollama
+  873  # Borrar los archivos del sistema
+  874  sudo rm -rf /usr/local/bin/ollama
+  875  sudo rm -rf /usr/local/lib/ollama
+  876  sudo rm -rf /usr/share/ollama
+  877  sudo rm -f /etc/systemd/system/ollama.service*
+  878  # Borrar los modelos y configuraciones de tu usuario
+  879  rm -rf ~/.ollama
+  880  # Recargar systemd para que olvide el servicio
+  881  sudo systemctl daemon-reload
+  882  sudo systemctl status ollama
+  883  sudo systemctl start ollama
+  884  # Desinstalar el paquete y limpiar dependencias
+  885  sudo dpkg --purge lmstudio-bionic
+  886  sudo apt autoremove --purge -y
+  887  # Borrar el resto de archivos y carpetas que dejó
+  888  sudo rm -rf /opt/Bionic
+  889  sudo rm -rf /usr/bin/bionic
+  890  sudo rm -rf /usr/share/doc/lmstudio-bionic
+  891  sudo rm -rf /usr/share/applications/ai.elementlabs.bionic.desktop
+  892  rm -rf ~/.config/Bionic
+  893  rm -rf ~/.config/LM-Studio
+  894  rm -rf ~/.lmstudio
+  895  rm -f ~/.lmstudio-home-pointer
+  896  # Detener y deshabilitar el servicio
+  897  sudo systemctl stop ollama
+  898  sudo systemctl disable ollama
+  899  # Borrar los archivos del sistema
+  900  sudo rm -rf /usr/local/bin/ollama
+  901  sudo rm -rf /usr/local/lib/ollama
+  902  sudo rm -rf /usr/share/ollama
+  903  sudo rm -f /etc/systemd/system/ollama.service*
+  904  # Borrar los modelos y configuraciones de tu usuario
+  905  rm -rf ~/.ollama
+  906  # Recargar systemd para que olvide el servicio
+  907  sudo systemctl daemon-reload
+  908  sudo systemctl stop ollama
+  909  sudo systemctl disable ollama
+  910  sudo rm -rf /usr/local/bin/ollama
+  911  sudo rm -rf /usr/local/lib/ollama
+  912  sudo rm -rf /usr/share/ollama
+  913  sudo rm -f /etc/systemd/system/ollama.service*
+  914  rm -rf ~/.ollama
+  915  sudo systemctl daemon-reload
+  916  # Borrar carpetas de usuario, caché y estado
+  917  rm -rf ~/.opencode
+  918  rm -rf ~/.config/opencode
+  919  rm -rf ~/.cache/opencode
+  920  rm -rf ~/.local/share/opencode
+  921  rm -rf ~/.local/state/opencode
+  922  opencode
+  923  dpkg -l | grep -Ei "lm-studio|lmstudio|bionic|ollama|opencode"
+  924  find /usr /opt /home/xavier/.local -maxdepth 4 \( -iname "*lm-studio*" -o -iname "*lmstudio*" -o -iname "*bionic*" -o -iname "*ollama*" -o -iname "*opencode*" \) 2>/dev/null
+  925  ls -d /home/xavier/.* /home/xavier/.config/* /home/xavier/.cache/* /home/xavier/.local/share/* 2>/dev/null | grep -Ei "lm-studio|lmstudio|bionic|ollama|opencode"
+  926  echo "========================================="
+  927  echo "       SISTEMA OPERATIVO Y KERNEL        "
+  928  echo "========================================="
+  929  lsb_release -a 2>/dev/null || cat /etc/os-release
+  930  uname -a
+  931  echo ""
+  932  echo "========================================="
+  933  echo "             PROCESADOR (CPU)            "
+  934  echo "========================================="
+  935  lscpu | grep -E "Model name|Architecture|CPU\(s\)|Thread|Core|Socket"
+  936  echo ""
+  937  echo "========================================="
+  938  echo "             MEMORIA RAM                 "
+  939  echo "========================================="
+  940  free -h
+  941  echo ""
+  942  echo "========================================="
+  943  echo "         TARJETA GRÁFICA (GPU)           "
+  944  echo "========================================="
+  945  lspci | grep -i vga
+  946  lspci | grep -i 3d
+  947  # Si tienes NVIDIA, esto te dará la VRAM y la versión del driver
+  948  nvidia-smi --query-gpu=name,memory.total,driver_version --format=csv 2>/dev/null || echo "No se detecta NVIDIA-SMI (puede que no tengas GPU NVIDIA o falten los drivers)."
+  949  echo ""
+  950  echo "========================================="
+  951  echo "           ALMACENAMIENTO                "
+  952  echo "========================================="
+  953  df -h -x tmpfs -x devtmpfs
+  954  clear
+  955  echo "=========================================="
+  956  echo "1. SISTEMA OPERATIVO"
+  957  echo "=========================================="
+  958  lsb_release -ds
+  959  uname -r
+  960  echo ""
+  961  echo "=========================================="
+  962  echo "2. EJECUTABLES"
+  963  echo "=========================================="
+  964  for bin in ollama opencode bionic lms code; do     echo "--- $bin ---";     command -v "$bin" || echo "No encontrado en PATH"; done
+  965  echo ""
+  966  echo "=========================================="
+  967  echo "3. PAQUETES INSTALADOS"
+  968  echo "=========================================="
+  969  dpkg -l | grep -Ei 'ollama|opencode|lmstudio|bionic'     || echo "No aparecen paquetes coincidentes"
+  970  echo ""
+  971  echo "=========================================="
+  972  echo "4. SERVICIOS DE SYSTEMD"
+  973  echo "=========================================="
+  974  systemctl status ollama --no-pager 2>&1 | head -n 12
+  975  echo ""
+  976  systemctl list-unit-files --type=service --no-legend     | grep -Ei 'ollama|opencode|lmstudio|bionic'     || echo "No aparecen servicios coincidentes"
+  977  echo ""
+  978  echo "=========================================="
+  979  echo "5. ARCHIVOS RESIDUALES DEL SISTEMA"
+  980  echo "=========================================="
+  981  for p in     /usr/local/bin/ollama     /usr/local/lib/ollama     /usr/share/ollama     /etc/systemd/system/ollama.service     /etc/systemd/system/ollama.service.d     /etc/systemd/system/ollama.service.d/override.conf     /opt/Bionic     /usr/bin/bionic; do     if [ -e "$p" ] || [ -L "$p" ]; then         ls -ld "$p";     fi; done
+  982  echo ""
+  983  echo "=========================================="
+  984  echo "6. CONTENIDO DEL DIRECTORIO DE SYSTEMD"
+  985  echo "=========================================="
+  986  sudo find /etc/systemd/system/ollama.service.d     -maxdepth 2 -type f -printf '%p\n' 2>/dev/null
+  987  echo ""
+  988  echo "=========================================="
+  989  echo "7. CONFIGURACIONES DEL USUARIO"
+  990  echo "=========================================="
+  991  for p in     "$HOME/.ollama"     "$HOME/.lmstudio"     "$HOME/.lmstudio-home-pointer"     "$HOME/.opencode"     "$HOME/.config/opencode"     "$HOME/.cache/opencode"     "$HOME/.local/share/opencode"     "$HOME/.local/state/opencode"     "$HOME/.config/Bionic"     "$HOME/.config/LM-Studio"; do     if [ -e "$p" ] || [ -L "$p" ]; then         ls -ld "$p";     fi; done
+  992  echo ""
+  993  echo "=========================================="
+  994  echo "8. EXTENSIONES RELACIONADAS CON IA"
+  995  echo "=========================================="
+  996  code --list-extensions --show-versions 2>/dev/null     | grep -Ei 'ollama|opencode|cline|roo|continue'     || echo "No aparecen extensiones coincidentes"
+  997  echo ""
+  998  echo "=========================================="
+  999  echo "9. MODELOS LOCALES, SI OLLAMA EXISTE"
+ 1000  echo "=========================================="
+ 1001  if command -v ollama >/dev/null 2>&1; then     ollama list; else     echo "Ollama no está disponible en PATH"; fi
+ 1002  echo ""
+ 1003  echo "=========================================="
+ 1004  echo "10. FIN DEL DIAGNOSTICO"
+ 1005  echo "=========================================="
+ 1006  set -Eeuo pipefail
+ 1007  echo "=========================================="
+ 1008  echo "1. COPIA DE SEGURIDAD DE CONFIGURACIÓN"
+ 1009  echo "=========================================="
+ 1010  OVERRIDE="/etc/systemd/system/ollama.service.d/override.conf"
+ 1011  if sudo test -f "$OVERRIDE"; then     echo "Configuración antigua encontrada:";     sudo cat "$OVERRIDE";      sudo install -d -m 700 /root/ollama-residual-backup;      sudo cp -a "$OVERRIDE"       "/root/ollama-residual-backup/override.conf.$(date +%Y%m%d-%H%M%S)";      sudo rm -f "$OVERRIDE";     sudo rmdir /etc/systemd/system/ollama.service.d 2>/dev/null || true; fi
+ 1012  sudo systemctl daemon-reload
+ 1013  echo ""
+ 1014  echo "=========================================="
+ 1015  echo "2. INSTALACIÓN OFICIAL DE OLLAMA"
+ 1016  echo "=========================================="
+ 1017  curl -fsSL https://ollama.com/install.sh | sh
+ 1018  sudo systemctl enable --now ollama
+ 1019  echo ""
+ 1020  echo "Versión instalada:"
+ 1021  ollama --version
+ 1022  echo ""
+ 1023  echo "=========================================="
+ 1024  echo "3. DESCARGA DEL MODELO LOCAL"
+ 1025  echo "=========================================="
+ 1026  ollama pull qwen3.5:2b-q4_K_M
+ 1027  set -Eeuo pipefail
+ 1028  echo "=========================================="
+ 1029  echo "1. COPIA DE SEGURIDAD DE CONFIGURACIÓN"
+ 1030  echo "=========================================="
+ 1031  OVERRIDE="/etc/systemd/system/ollama.service.d/override.conf"
+ 1032  if sudo test -f "$OVERRIDE"; then     echo "Configuración antigua encontrada:";     sudo cat "$OVERRIDE";      sudo install -d -m 700 /root/ollama-residual-backup;      sudo cp -a "$OVERRIDE"       "/root/ollama-residual-backup/override.conf.$(date +%Y%m%d-%H%M%S)";      sudo rm -f "$OVERRIDE";     sudo rmdir /etc/systemd/system/ollama.service.d 2>/dev/null || true; fi
+ 1033  sudo systemctl daemon-reload
+ 1034  echo ""
+ 1035  echo "=========================================="
+ 1036  echo "2. INSTALACIÓN OFICIAL DE OLLAMA"
+ 1037  echo "=========================================="
+ 1038  curl -fsSL https://ollama.com/install.sh | sh
+ 1039  sudo systemctl enable --now ollama
+ 1040  echo ""
+ 1041  echo "Versión instalada:"
+ 1042  ollama --version
+ 1043  echo ""
+ 1044  echo "=========================================="
+ 1045  echo "3. DESCARGA DEL MODELO LOCAL"
+ 1046  echo "=========================================="
+ 1047  ollama pull qwen3.5:2b-q4_K_M
+ 1048  opencode
+ 1049  curl -fsSL https://ollama.com/install.sh | sh
+ 1050  Set up Ollama so I can build with open models.
+ 1051  Ollama runs open models in two ways:
+ 1052  - Locally, on this computer. Speed depends on the hardware. Large models are slow on a computer without a strong GPU.
+ 1053  - In Ollama's cloud. Cloud models run on Ollama's servers, so they are fast on any computer and need no download. In the CLI, a cloud model name ends in :cloud, for example gemma4:cloud. From code, apps call the API at https://ollama.com.
+ 1054  Before you do anything, learn Ollama from its docs:
+ 1055  - Read the docs index at https://docs.ollama.com/llms.txt.
+ 1056  - Read https://docs.ollama.com/quickstart.md, https://docs.ollama.com/cloud.md, and https://docs.ollama.com/gpu.md.
+ 1057  - If I want to call Ollama from code, read https://docs.ollama.com/api/introduction.md. If this project already uses the OpenAI or Anthropic SDK, also read https://docs.ollama.com/api/openai-compatibility.md or https://docs.ollama.com/api/anthropic-compatibility.md.
+ 1058  - For any other question, search the full docs at https://docs.ollama.com/llms-full.txt.
+ 1059  Then:
+ 1060  1. If the ollama command is not installed, install the Ollama CLI. On macOS or Linux, run: curl -fsSL https://ollama.com/install.sh | sh. On Windows, run in PowerShell: irm https://ollama.com/install.ps1 | iex.
+ 1061  2. Check this computer's GPU and memory against https://docs.ollama.com/gpu.md.
+ 1062  3. Ask me what I want to build.
+ 1063  4. Recommend local models, cloud models, or both for that, and tell me why. If local models would be slow on this computer, recommend cloud models. If I don't have a paid plan, start with gemma4:cloud, which the free plan includes. Most other cloud models need a paid plan or purchased credits.
+ 1064  Do not sign in, create an API key, or use an API key for me. If I choose cloud models, tell me to run ollama signin, or to create a key at https://ollama.com/settings/keys.
+ 1065  sudo systemctl status ollama
+ 1066  clear
+ 1067  sudo systemctl status ollama
+ 1068  ollama -v
+ 1069  sudo systemctl daemon-reload
+ 1070  sudo systemctl status ollama
+ 1071  bash <<'OLLAMA_CLEANUP'
+ 1072  set -u
+ 1073  shopt -s nullglob
+ 1074  echo "=================================================="
+ 1075  echo "ELIMINACION COMPLETA DE OLLAMA"
+ 1076  echo "=================================================="
+ 1077  echo "Se eliminaran Ollama, sus modelos y sus configuraciones."
+ 1078  echo "No se eliminaran tus proyectos de programacion."
+ 1079  echo ""
+ 1080  # --------------------------------------------------
+ 1081  # 1. Detectar ubicaciones personalizadas de los modelos
+ 1082  # --------------------------------------------------
+ 1083  declare -a CUSTOM_MODEL_PATHS=()
+ 1084  if [ -n "${OLLAMA_MODELS:-}" ]; then
+ 1085      CUSTOM_MODEL_PATHS+=("$OLLAMA_MODELS")
+ 1086  fi
+ 1087  for f in \
+ 1088      /etc/systemd/system/ollama.service \
+ 1089      /etc/systemd/system/ollama.service.d/*.conf \
+ 1090      /etc/environment \
+ 1091      "$HOME/.bashrc" \
+ 1092      "$HOME/.profile" \
+ 1093      "$HOME/.bash_profile" \
+ 1094      "$HOME/.zshrc" \
+ 1095      "$HOME/.config/environment.d/"*.conf
+ 1096  do
+ 1097      if [ -f "$f" ]; then
+ 1098          if [[ "$f" == /etc/* ]]; then
+ 1099              matches=$(sudo grep -hEo \
+ 1100                  'OLLAMA_MODELS="?[^"[:space:]]+' "$f" 2>/dev/null || true)
+ 1101          else
+ 1102              matches=$(grep -hEo \
+ 1103                  'OLLAMA_MODELS="?[^"[:space:]]+' "$f" 2>/dev/null || true)
+ 1104          fi
+ 1105          while IFS= read -r value; do
+ 1106              [ -n "$value" ] || continue
+ 1107              value="${value#*OLLAMA_MODELS=}"
+ 1108              value="${value%\"}"
+ 1109              value="${value#\"}"
+ 1110              CUSTOM_MODEL_PATHS+=("$value")
+ 1111          done <<< "$matches"
+ 1112      fi
+ 1113  done
+ 1114  # Eliminar rutas duplicadas y conservar únicamente las personalizadas.
+ 1115  declare -A SEEN_PATHS=()
+ 1116  for model_path in "${CUSTOM_MODEL_PATHS[@]}"; do
+ 1117      case "$model_path" in
+ 1118          '$HOME/'*) model_path="$HOME/${model_path#\$HOME/}" ;;
+ 1119          '~/'*)     model_path="$HOME/${model_path#~/}" ;;
+ 1120      esac
+ 1121      [ -n "$model_path" ] || continue
+ 1122      case "$model_path" in
+ 1123          /usr/share/ollama|/usr/share/ollama/*|"$HOME/.ollama"|"$HOME/.ollama"/*)
+ 1124              continue
+ 1125              ;;
+ 1126      esac
+ 1127      [ -z "${SEEN_PATHS[$model_path]+x}" ] || continue
+ 1128      SEEN_PATHS["$model_path"]=1
+ 1129      # No borrar rutas generales ni ubicaciones que no sean absolutas.
+ 1130      case "$model_path" in
+ 1131          /*) ;;
+ 1132          *)
+ 1133              echo "ATENCION: ruta personalizada no absoluta: $model_path"
+ 1134              echo "No se borrara automaticamente."
+ 1135              continue
+ 1136              ;;
+ 1137      esac
+ 1138      case "$model_path" in
+ 1139          /|/home|/usr|/var|/opt|/mnt|/media|/run/media|/tmp|/etc|/root)
+ 1140              echo "ATENCION: ruta demasiado general protegida: $model_path"
+ 1141              continue
+ 1142              ;;
+ 1143      esac
+ 1144      if [ -e "$model_path" ] || [ -L "$model_path" ]; then
+ 1145          echo ""
+ 1146          echo "Se encontro una ubicacion personalizada de modelos:"
+ 1147          echo "$model_path"
+ 1148          echo "Comprueba que corresponda exclusivamente a modelos de Ollama."
+ 1149          read -r -p "¿Eliminar esta ruta y todo su contenido? Escribe SI para confirmar: " answer
+ 1150          if [ "$answer" = "SI" ]; then
+ 1151              sudo rm -rf -- "$model_path"
+ 1152              echo "Ruta personalizada eliminada."
+ 1153          else
+ 1154              echo "Ruta conservada por seguridad: $model_path"
+ 1155          fi
+ 1156      fi
+ 1157  done
+ 1158  # --------------------------------------------------
+ 1159  # 2. Detener y deshabilitar servicios
+ 1160  # --------------------------------------------------
+ 1161  echo ""
+ 1162  echo "=== Deteniendo servicios ==="
+ 1163  sudo systemctl stop ollama.service 2>/dev/null || true
+ 1164  sudo systemctl disable ollama.service 2>/dev/null || true
+ 1165  systemctl --user stop ollama.service 2>/dev/null || true
+ 1166  systemctl --user disable ollama.service 2>/dev/null || true
+ 1167  sudo pkill -x ollama 2>/dev/null || true
+ 1168  pkill -x ollama 2>/dev/null || true
+ 1169  # --------------------------------------------------
+ 1170  # 3. Desinstalar el paquete, si existe
+ 1171  # --------------------------------------------------
+ 1172  echo ""
+ 1173  echo "=== Comprobando paquete del sistema ==="
+ 1174  if dpkg-query -W -f='${db:Status-Abbrev}' ollama 2>/dev/null \
+ 1175      | grep -q '^ii'; then
+ 1176      sudo apt-get purge -y ollama || true
+ 1177  else
+ 1178      echo "No hay un paquete de Ollama registrado en dpkg."
+ 1179  fi
+ 1180  # --------------------------------------------------
+ 1181  # 4. Eliminar servicio y configuraciones de systemd
+ 1182  # --------------------------------------------------
+ 1183  echo ""
+ 1184  echo "=== Eliminando servicios y configuraciones ==="
+ 1185  sudo rm -f \
+ 1186      /etc/systemd/system/ollama.service \
+ 1187      /usr/lib/systemd/system/ollama.service \
+ 1188      /lib/systemd/system/ollama.service \
+ 1189      /run/systemd/system/ollama.service
+ 1190  sudo rm -rf /etc/systemd/system/ollama.service.d
+ 1191  rm -f "$HOME/.config/systemd/user/ollama.service"
+ 1192  rm -rf "$HOME/.config/systemd/user/ollama.service.d"
+ 1193  sudo systemctl daemon-reload
+ 1194  sudo systemctl reset-failed ollama.service 2>/dev/null || true
+ 1195  systemctl --user daemon-reload 2>/dev/null || true
+ 1196  # --------------------------------------------------
+ 1197  # 5. Eliminar ejecutables, bibliotecas y modelos
+ 1198  # --------------------------------------------------
+ 1199  echo ""
+ 1200  echo "=== Eliminando archivos de Ollama ==="
+ 1201  sudo rm -f \
+ 1202      /usr/local/bin/ollama \
+ 1203      /usr/bin/ollama \
+ 1204      /bin/ollama
+ 1205  sudo rm -rf \
+ 1206      /usr/local/lib/ollama \
+ 1207      /usr/lib/ollama \
+ 1208      /lib/ollama \
+ 1209      /usr/share/ollama \
+ 1210      /var/lib/ollama \
+ 1211      /opt/ollama \
+ 1212      /etc/ollama
+ 1213  # Datos, modelos y configuraciones del usuario actual.
+ 1214  rm -rf \
+ 1215      "$HOME/.ollama" \
+ 1216      "$HOME/.config/ollama" \
+ 1217      "$HOME/.cache/ollama" \
+ 1218      "$HOME/.local/share/ollama" \
+ 1219      "$HOME/.local/state/ollama"
+ 1220  # --------------------------------------------------
+ 1221  # 6. Eliminar repositorios y claves dedicados a Ollama
+ 1222  # --------------------------------------------------
+ 1223  echo ""
+ 1224  echo "=== Limpiando repositorios dedicados ==="
+ 1225  sudo find /etc/apt /usr/share/keyrings \
+ 1226      -type f -iname '*ollama*' -delete 2>/dev/null || true
+ 1227  # --------------------------------------------------
+ 1228  # 7. Limpiar variables de entorno del usuario
+ 1229  # --------------------------------------------------
+ 1230  echo ""
+ 1231  echo "=== Limpiando configuracion de la terminal ==="
+ 1232  python3 - "$HOME" <<'PY'
+ 1233  from pathlib import Path
+ 1234  import re
+ 1235  import sys
+ 1236  home = Path(sys.argv[1])
+ 1237  files = [
+ 1238      home / ".bashrc",
+ 1239      home / ".profile",
+ 1240      home / ".bash_profile",
+ 1241      home / ".zshrc",
+ 1242      home / ".pam_environment",
+ 1243  ]
+ 1244  env_dir = home / ".config" / "environment.d"
+ 1245  if env_dir.is_dir():
+ 1246      files.extend(env_dir.glob("*.conf"))
+ 1247  pattern = re.compile(r"\bOLLAMA_[A-Z0-9_]*\b", re.IGNORECASE)
+ 1248  for path in files:
+ 1249      if not path.is_file():
+ 1250          continue
+ 1251      try:
+ 1252          original = path.read_text()
+ 1253          lines = original.splitlines(keepends=True)
+ 1254          cleaned = "".join(
+ 1255              line for line in lines
+ 1256              if not pattern.search(line)
+ 1257          )
+ 1258          if cleaned != original:
+ 1259              path.write_text(cleaned)
+ 1260              print(f"Variables de Ollama eliminadas de: {path}")
+ 1261      except OSError as exc:
+ 1262          print(f"No se pudo modificar {path}: {exc}")
+ 1263  PY
+ 1264  # Limpiar también variables de entorno globales, si existen.
+ 1265  sudo python3 <<'PY'
+ 1266  from pathlib import Path
+ 1267  import re
+ 1268  files = [
+ 1269      Path("/etc/environment"),
+ 1270      Path("/etc/profile"),
+ 1271      Path("/etc/bash.bashrc"),
+ 1272  ]
+ 1273  for directory in (
+ 1274      Path("/etc/environment.d"),
+ 1275      Path("/etc/profile.d"),
+ 1276  ):
+ 1277      if directory.is_dir():
+ 1278          files.extend(directory.glob("*.conf"))
+ 1279          files.extend(directory.glob("*.sh"))
+ 1280  pattern = re.compile(r"\bOLLAMA_[A-Z0-9_]*\b", re.IGNORECASE)
+ 1281  for path in files:
+ 1282      if not path.is_file():
+ 1283          continue
+ 1284      try:
+ 1285          original = path.read_text()
+ 1286          lines = original.splitlines(keepends=True)
+ 1287          cleaned = "".join(
+ 1288              line for line in lines
+ 1289              if not pattern.search(line)
+ 1290          )
+ 1291          if cleaned != original:
+ 1292              path.write_text(cleaned)
+ 1293              print(f"Variables de Ollama eliminadas de: {path}")
+ 1294      except OSError as exc:
+ 1295          print(f"No se pudo modificar {path}: {exc}")
+ 1296  PY
+ 1297  sudo rm -f /etc/profile.d/ollama.sh
+ 1298  rm -f "$HOME/.config/environment.d/ollama.conf"
+ 1299  # --------------------------------------------------
+ 1300  # 8. Desinstalar la extension de Ollama para VS Code
+ 1301  # --------------------------------------------------
+ 1302  echo ""
+ 1303  echo "=== Eliminando extension de VS Code ==="
+ 1304  if command -v code >/dev/null 2>&1; then
+ 1305      code --uninstall-extension ollama.ollama 2>/dev/null || true
+ 1306  fi
+ 1307  rm -rf \
+ 1308      "$HOME/.config/Code/User/globalStorage/ollama.ollama" \
+ 1309      "$HOME/.config/Code/CachedExtensionVSIXs/ollama.ollama-"* \
+ 1310      "$HOME/.vscode/extensions/ollama.ollama-"* \
+ 1311      "$HOME/snap/code/common/.config/Code/User/globalStorage/ollama.ollama"
+ 1312  # Eliminar referencias de configuracion de Ollama en ajustes de usuario de VS Code.
+ 1313  python3 - "$HOME" <<'PY'
+ 1314  from pathlib import Path
+ 1315  import re
+ 1316  import sys
+ 1317  home = Path(sys.argv[1])
+ 1318  user_dirs = [
+ 1319      home / ".config" / "Code" / "User",
+ 1320      home / ".config" / "Code - Insiders" / "User",
+ 1321      home / "snap" / "code" / "current" / ".config" / "Code" / "User",
+ 1322      home / "snap" / "code" / "common" / ".config" / "Code" / "User",
+ 1323  ]
+ 1324  pattern = re.compile(
+ 1325      r'ollama\.|OLLAMA_|localhost:11434',
+ 1326      re.IGNORECASE
+ 1327  )
+ 1328  for user_dir in user_dirs:
+ 1329      if not user_dir.is_dir():
+ 1330          continue
+ 1331      files = [user_dir / "settings.json"]
+ 1332      profiles = user_dir / "profiles"
+ 1333      if profiles.is_dir():
+ 1334          files.extend(profiles.glob("*/settings.json"))
+ 1335      for path in files:
+ 1336          if not path.is_file():
+ 1337              continue
+ 1338          try:
+ 1339              original = path.read_text()
+ 1340              lines = original.splitlines(keepends=True)
+ 1341              cleaned = "".join(
+ 1342                  line for line in lines
+ 1343                  if not pattern.search(line)
+ 1344              )
+ 1345              if cleaned != original:
+ 1346                  path.write_text(cleaned)
+ 1347                  print(f"Ajustes de Ollama eliminados de: {path}")
+ 1348          except OSError as exc:
+ 1349              print(f"No se pudo modificar {path}: {exc}")
+ 1350  PY
+ 1351  # --------------------------------------------------
+ 1352  # 9. Eliminar la cuenta y el grupo exclusivos de Ollama
+ 1353  # --------------------------------------------------
+ 1354  echo ""
+ 1355  echo "=== Eliminando usuario y grupo de servicio ==="
+ 1356  if getent passwd ollama >/dev/null 2>&1; then
+ 1357      sudo userdel ollama 2>/dev/null || true
+ 1358  fi
+ 1359  if getent group ollama >/dev/null 2>&1; then
+ 1360      sudo groupdel ollama 2>/dev/null || true
+ 1361  fi
+ 1362  # --------------------------------------------------
+ 1363  # 10. Verificacion
+ 1364  # --------------------------------------------------
+ 1365  echo ""
+ 1366  echo "=================================================="
+ 1367  echo "VERIFICACION FINAL"
+ 1368  echo "=================================================="
+ 1369  if command -v ollama >/dev/null 2>&1; then
+ 1370      echo "ATENCION: todavia existe un ejecutable accesible:"
+ 1371      command -v ollama
+ 1372  else
+ 1373      echo "OK: Ollama no esta disponible en PATH."
+ 1374  fi
+ 1375  if systemctl cat ollama.service >/dev/null 2>&1; then
+ 1376      echo "ATENCION: systemd todavia encuentra la unidad."
+ 1377  else
+ 1378      echo "OK: la unidad ollama.service ya no existe."
+ 1379  fi
+ 1380  if dpkg-query -W -f='${db:Status-Abbrev}' ollama 2>/dev/null \
+ 1381      | grep -q '^ii'; then
+ 1382      echo "ATENCION: todavia aparece un paquete Ollama instalado."
+ 1383  else
+ 1384      echo "OK: no aparece un paquete Ollama instalado."
+ 1385  fi
+ 1386  if code --list-extensions 2>/dev/null | grep -qi '^ollama\.ollama$'; then
+ 1387      echo "ATENCION: la extension de Ollama sigue registrada en VS Code."
+ 1388  else
+ 1389      echo "OK: la extension de Ollama no aparece en VS Code."
+ 1390  fi
+ 1391  if getent passwd ollama >/dev/null 2>&1; then
+ 1392      echo "ATENCION: la cuenta de sistema ollama sigue existiendo."
+ 1393  else
+ 1394      echo "OK: la cuenta de sistema ollama no existe."
+ 1395  fi
+ 1396  echo ""
+ 1397  echo "Restos con nombre relacionado con Ollama en rutas habituales:"
+ 1398  sudo find \
+ 1399      /usr/local/bin \
+ 1400      /usr/local/lib \
+ 1401      /usr/share \
+ 1402      /etc/systemd/system \
+ 1403      /etc/apt \
+ 1404      /opt \
+ 1405      /var/lib \
+ 1406      "$HOME/.config" \
+ 1407      "$HOME/.local/share" \
+ 1408      -maxdepth 4 -iname '*ollama*' -print 2>/dev/null || true
+ 1409  echo ""
+ 1410  echo "=================================================="
+ 1411  echo "LIMPIEZA FINALIZADA"
+ 1412  echo "=================================================="
+ 1413  echo "Revisa las advertencias y posibles restos indicados arriba."
+ 1414  OLLAMA_CLEANUP
+ 1415  ollama -v
+ 1416  sudo apt-get update
+ 1417      sudo apt-get install -y curl ca-certificates
+ 1418  sudo rm -rf /usr/lib/ollama
+ 1419  sudo rm -r $(which ollama | tr 'bin' 'lib')
+ 1420  curl -fsSL https://ollama.com/install.sh | sh
+ 1421  ollama serve
+ 1422  ollama -v
+ 1423  sudo useradd -r -s /bin/false -U -m -d /usr/share/ollama ollama
+ 1424  sudo usermod -a -G ollama $(whoami)
+ 1425  sudo systemctl daemon-reload
+ 1426  wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2604/x86_64/cuda-keyring_1.1-1_all.deb
+ 1427  sudo dpkg -i cuda-keyring_1.1-1_all.deb
+ 1428  sudo apt-get update
+ 1429  sudo apt-get -y install cuda-toolkit-13-4
+ 1430  nvidia-smi
+ 1431  ollama pull gemma4:e2b
+ 1432  ollama run bonsai-2:2b
+ 1433  ollama run qwen3:1.7b
+ 1434  opencode
+ 1435  sudo systemctl status ollama
+ 1436  ls
+ 1437  cd Backend
+ 1438  ls
+ 1439  mvn spring-boot:run
+ 1440  opencode
+ 1441  git init
+ 1442  git add .
+ 1443  git commit -m "first commit"
+ 1444  git branch -M main
+ 1445  git remote add origin https://github.com/Ironhackcourse/app-con-IA.git
+ 1446  git push -u origin main
+ 1447  opencode
+ 1448  opencode
+ 1449  [200~git init~
+ 1450  git init
+ 1451  git add .
+ 1452  git commit -m "first commit"
+ 1453  git branch -M main
+ 1454  git remote add origin https://github.com/Ironhackcourse/chatbot-Eliza.git
+ 1455  git push -u origin main
+ 1456  git add .
+ 1457  git commit -m "add new readme"
+ 1458  git push -u origin main
+ 1459  cd Backend
+ 1460  mvn spring-boot:run
+ 1461  mvn clean
+ 1462  mvn spring-boot:run
+ 1463  sudo apt update
+ 1464  sudo apt upgarde
+ 1465  sudo apt upgrade
+ 1466  sudo systemctl status ollama
+ 1467  sudo systemctl start mysql
+ 1468  sudo systemctl status mysql
+ 1469  opencode
+ 1470  mariadb -u root -p
+ 1471  opencode
+ 1472  bash corrector.sh
+ 1473  sudo apt update
+ 1474  sudo apt upgrade
+ 1475  cd Descargas
+ 1476  ls
+ 1477  sudo apt install ./cursor_3.24.18_amd64.deb
+ 1478  sudo apt purge cursor -y
+ 1479  rm -rf ~/.config/Cursor ~/.config/cursor ~/.cursor ~/.cursor-server
+ 1480  sudo apt autoremove -y
+ 1481  ollama run qwen2.5-coder:3b
+ 1482  curl -fsSL [https://ollama.com/install.sh](https://ollama.com/install.sh) | sh
+ 1483  curl -fsSL https://ollama.com/install.sh | sh
+ 1484  sudo systemctl status ollama
+ 1485  ollama list
+ 1486  ollama run qwen2.5-coder:7b
+ 1487  python -m pip install aider-install
+ 1488  curl -LsSf https://aider.chat/install.sh | sh
+ 1489  cd ~/Documentos/IronHack/Hola
+ 1490  aider --model ollama/qwen2.5-coder:7b
+ 1491  aider
+ 1492  echo 'export PATH="/home/xavier/.local/bin:$PATH"' >> ~/.bashrc
+ 1493  source ~/.bashrc
+ 1494  aider --model ollama/qwen2.5-coder:7b
+ 1495  aider . --model ollama/qwen2.5-coder:7b
+ 1496  rm -f ~/.local/bin/aider
+ 1497  rm -rf ~/.aider* ~/.cache/aider
+ 1498  uv tool uninstall aider-chat 2>/dev/null
+ 1499  ollama list
+ 1500  ollama pull qwen3.5:2b
+ 1501  ollama list
+ 1502  [200~ollama --version
+ 1503  opencode --version
+ 1504  ollama show qwen3.5:2b
+ 1505  e2e;1R
+ 1506  ollama --version
+ 1507  opencode --version
+ 1508  ollama show qwen3.5:2b
+ 1509  ollama show qwen3:1.7b
+ 1510  cat ~/.config/opencode/opencode.json 2>/dev/null
+ 1511  cat ~/.config/opencode/opencode.jsonc 2>/dev/null
+ 1512  ollama model qwen3.5:2b
+ 1513  ollama pull qwen3.5:2b
+ 1514  ollama --model qwen3.5:2b
+ 1515  cat ~/.config/opencode/opencode.json 2>/dev/null
+ 1516  cat ~/.config/opencode/opencode.jsonc 2>/dev/null
+ 1517  cd /home/xavier/Documentos/IronHack/Hola
+ 1518  echo "=== Archivos de configuración global ==="
+ 1519  ls -la ~/.config/opencode ~/.local/share/opencode 2>/dev/null
+ 1520  echo "=== Configuración del proyecto ==="
+ 1521  find . -maxdepth 2 -type f   \( -name 'opencode.json' -o -name 'opencode.jsonc' \) -print
+ 1522  echo "=== Variables de entorno ==="
+ 1523  for v in OPENCODE_CONFIG OPENCODE_CONFIG_DIR OPENCODE_CONFIG_CONTENT; do   if printenv "$v" >/dev/null; then     echo "$v está definida";   else     echo "$v no está definida";   fi; done
+ 1524  echo "=== Verificar el archivo de prueba ==="
+ 1525  if [ -f prueba.txt ]; then   cat prueba.txt; else   echo "prueba.txt no existe"; fi
+ 1526  cd /home/xavier/Documentos/IronHack/Hola
+ 1527  ollama launch opencode
+ 1528  echo "========== VERSIONES =========="
+ 1529  ollama --version
+ 1530  opencode --version
+ 1531  echo
+ 1532  echo "========== RUTAS DE LOS EJECUTABLES =========="
+ 1533  command -v ollama
+ 1534  command -v opencode
+ 1535  echo
+ 1536  echo "========== VERSION DE OLLAMA =========="
+ 1537  ollama version 2>/dev/null || true
+ 1538  echo
+ 1539  echo "========== CONFIGURACIONES DE OPENCODE =========="
+ 1540  find ~/.config ~/.local/share/opencode   -maxdepth 4 -type f   \( -iname '*model*limit*'      -o -name 'opencode.json'      -o -name 'opencode.jsonc' \)   -print 2>/dev/null
+ 1541  echo
+ 1542  echo "========== MODELOS DISPONIBLES =========="
+ 1543  ollama list
+ 1544  ollama launch opencode --help
+ 1545  opencode --version
+ 1546  ollama launch opencode
+ 1547  ollama launch opencode --model qwen3.5:2b
+ 1548  curl -sS http://localhost:11434/api/tags   | python3 -m json.tool   | head -n 80
+ 1549  opencode run --model ollama/qwen3.5:2b   "Crea prueba-opencode.txt con el contenido Hola desde OpenCode. Usa las herramientas reales para crear el archivo y verifica después su contenido."
+ 1550  opencode run --model ollama/qwen3.1:7b   "Crea prueba-opencode.txt con el contenido Hola desde OpenCode. Usa las herramientas reales para crear el archivo y verifica después su contenido."
+ 1551  opencode run --model ollama/qwen3:1.7b   "Crea prueba-opencode.txt con el contenido Hola desde OpenCode. Usa las herramientas reales para crear el archivo y verifica después su contenido."
+ 1552  curl -fsSL https://opencode.ai/v2/install | bash
+ 1553  aider --model qwen2.5-corder:7b
+ 1554  opencode
+ 1555  opencode models ollama
+ 1556  mkdir -p ~/.config/opencode
+ 1557  cat > ~/.config/opencode/opencode.json <<'EOF'
+ 1558  {
+ 1559    "$schema": "https://opencode.ai/config.json",
+ 1560    "provider": {
+ 1561      "ollama": {
+ 1562        "npm": "@ai-sdk/openai-compatible",
+ 1563        "name": "Ollama local",
+ 1564        "options": {
+ 1565          "baseURL": "http://localhost:11434/v1"
+ 1566        },
+ 1567        "models": {
+ 1568          "qwen3:1.7b": {
+ 1569            "name": "Qwen3 1.7B",
+ 1570            "limit": {
+ 1571              "context": 32768,
+ 1572              "output": 4096
+ 1573            }
+ 1574          }
+ 1575        }
+ 1576      }
+ 1577    }
+ 1578  }
+ 1579  EOF
+ 1580  opencode models ollama
+ 1581  python3 -m json.tool ~/.config/opencode/opencode.json
+ 1582  opencode models
+ 1583  curl -sS http://localhost:11434/v1/models | python3 -m json.tool
+ 1584  opencode --model ollama/qwen3:1.7b
+ 1585  opencode
+ 1586  rm -rf ~/.aider* ~/.cache/aider -f src/css/styles.css
+ 1587  rm -f src/css/styles.css
+ 1588  git init
+ 1589  git add .
+ 1590  git commit -m "first commit"
+ 1591  git branch -M main
+ 1592  git remote add origin https://github.com/Ironhackcourse/API-Open-Weather-Map.git
+ 1593  git push -u origin main
+ 1594  git commit -m "add readme"
+ 1595  git add .
+ 1596  git commit -m "add readme"
+ 1597  git push -u origin main
+ 1598  ollama create nemotron-dev -f Modelfile
+ 1599  ollama run nemotron-dev
+ 1600  ollama list
+ 1601  opencode
+ 1602  git init
+ 1603  git add .
+ 1604  git commit -m "first commit"
+ 1605  git branch -M main
+ 1606  git remote add origin https://github.com/Ironhackcourse/appendChild.git
+ 1607  git push -u origin main
+ 1608  opencode
+ 1609  sudo apt update
+ 1610  sudo apt upgrade
+ 1611  ls
+ 1612  cd MangaCoBackend
+ 1613  mvn spring-boot:run
+ 1614  sudo systemctl start mysql
+ 1615  mariadb -u root -p
+ 1616  sudo apt update
+ 1617  sudo apt upgrade
+ 1618  ls
+ 1619  cd MangaCoBackend
+ 1620  mvn spring-boot:run
+ 1621  opencode
+ 1622  mariadb -u root -p
+ 1623  sudo systemctl start mysql
+ 1624  sudo systemclt start mysql
+ 1625  sudo systemctl start mysql
+ 1626  sudo systemctl daemon-reload
+ 1627  sudo systemctl start mysql
+ 1628  sudo systemctl status mysql
+ 1629  sudo systemctl start mysql
+ 1630  sudo systemctl status mysql
+ 1631  mvn spring-boot:run
+ 1632  opencode
+ 1633  maria -u root -p
+ 1634  mariadb -u root -p
+ 1635  opencode
+ 1636  mvn spring-boot:run
+ 1637  sudo systemctl start mysql
+ 1638  mariadb -u root -p
+ 1639  sudo systemctl stop ollama
+ 1640  sudo apt update
+ 1641  sudo apt upgrade
+ 1642  sudo apt upgdate 
+ 1643  sudo apt update 
+ 1644  sudo apt upgrade
+ 1645  ls
+ 1646  cd MangaCoBackend
+ 1647  mvn spring-boot:run
+ 1648  ./mvnw compile -q
+ 1649  mvn spring-boot:run
+ 1650  ./mvnw compile -q
+ 1651  mvn spring-boot:run
+ 1652  git status
+ 1653  git add .
+ 1654  git status
+ 1655  git commit -m "Add function login"
+ 1656  git status
+ 1657  git push -u origin main
+ 1658  git status
+ 1659  git add .
+ 1660  git status
+ 1661  git commit -m "Update .gitignore"
+ 1662  git status
+ 1663  git push -u origin main
+ 1664  opencode
+ 1665  git --version
+ 1666  git status
+ 1667  git add .
+ 1668  git commit -m "Add login in Frontend"
+ 1669  git push
+ 1670  git push -u origin main
+ 1671  git add MangaCoFrontend/rama.html
+ 1672  git push -u origin xavier
+ 1673  git checkout main
+ 1674  git merge xavier
+ 1675  git push origin main
+ 1676  git branch -d xavier
+ 1677  git push origin --delete xavier
+ 1678  git pull origin main
+ 1679  git checkout -- .
+ 1680  history > historial_comandos.txt
