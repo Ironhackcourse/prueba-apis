@@ -43,13 +43,13 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthFilter;
-    private final AuthenticationManager authenticationManager;
+    
 
     public SecurityConfig(
             JwtAuthenticationFilter jwtAuthFilter,
             AuthenticationManager authenticationManager) {
         this.jwtAuthFilter = jwtAuthFilter;
-        this.authenticationManager = authenticationManager;
+        
     }
 
     /**

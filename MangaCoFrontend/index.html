@@ -1,98 +1,145 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MangaCo - Catálogo de Cómics y Manga</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
-</head>
-<body>
-                <header class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">📚 MangaCo</a>
-            <nav class="nav-links">
-                <a href="index.html" class="active">Inicio</a>
-                <a href="comic-list.html">Comics</a>
-                <a href="series-list.html">Series</a>
-                <a href="author-list.html">Autores</a>
-                <a href="publisher.html">Editoriales</a>
-            </nav>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">📚 MangaCo</a>
+        <nav class="nav-links">
+          <a href="index.html" class="active">Inicio</a>
+          <a href="comic-list.html">Comics</a>
+          <a href="series-list.html">Series</a>
+          <a href="author-list.html">Autores</a>
+          <a href="publisher.html">Editoriales</a>
+        </nav>
+        <!-- NUEVO: Contenedor para el botón de login/usuario -->
+        <div id="authContainer" style="margin-left: 2rem">
+          <!-- Se llena desde JS -->
         </div>
+      </div>
     </header>
 
     <main>
-        <!-- HERO -->
-        <section class="hero">
-            <div class="container">
-                <h1 class="hero-title">Tu catálogo de <span class="accent">cómics y manga</span></h1>
-                <p class="hero-subtitle">Explora miles de títulos, autores y editoriales</p>
-                <div class="search-bar">
-                    <input type="text" id="globalSearch" placeholder="Busca por título, serie o autor..." class="search-input">
-                    <button id="searchBtn" class="btn btn-primary">Buscar</button>
-                </div>
-            </div>
-        </section>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container">
+          <h1 class="hero-title">
+            Tu catálogo de <span class="accent">cómics y manga</span>
+          </h1>
+          <p class="hero-subtitle">
+            Explora miles de títulos, autores y editoriales
+          </p>
+          <div class="search-bar">
+            <input
+              type="text"
+              id="globalSearch"
+              placeholder="Busca por título, serie o autor..."
+              class="search-input"
+            />
+            <button id="searchBtn" class="btn btn-primary">Buscar</button>
+          </div>
+        </div>
+      </section>
 
-        <!-- SERIES DESTACADAS -->
-        <section id="series-section" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Series destacadas</h2>
-                    <a href="series-list.html" class="section-link">Ver todas →</a>
-                </div>
-                <div id="featuredSeries" class="grid grid-4"></div>
-            </div>
-        </section>
+      <!-- SERIES DESTACADAS -->
+      <section id="series-section" class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Series destacadas</h2>
+            <a href="series-list.html" class="section-link">Ver todas →</a>
+          </div>
+          <div id="featuredSeries" class="grid grid-4"></div>
+        </div>
+      </section>
 
-        <!-- ÚLTIMOS COMICS -->
-        <section id="comics-section" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Últimos comics</h2>
-                    <a href="comic-list.html" class="section-link">Ver todos →</a>
-                </div>
-                <div id="latestComics" class="grid grid-4"></div>
-            </div>
-        </section>
+      <!-- ÚLTIMOS COMICS -->
+      <section id="comics-section" class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Últimos comics</h2>
+            <a href="comic-list.html" class="section-link">Ver todos →</a>
+          </div>
+          <div id="latestComics" class="grid grid-4"></div>
+        </div>
+      </section>
 
-        <!-- AUTORES -->
-        <section id="authors-section" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Autores populares</h2>
-                    <a href="author-list.html" class="section-link">Ver todos →</a>
-                </div>
-                <div id="featuredAuthors" class="grid grid-4"></div>
-            </div>
-        </section>
+      <!-- AUTORES -->
+      <section id="authors-section" class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Autores populares</h2>
+            <a href="author-list.html" class="section-link">Ver todos →</a>
+          </div>
+          <div id="featuredAuthors" class="grid grid-4"></div>
+        </div>
+      </section>
 
-        <!-- GÉNEROS -->
-        <section id="genres-section" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Explora por género</h2>
-                </div>
-                <div id="genresList" class="genre-list"></div>
+      <!-- GÉNEROS -->
+      <section id="genres-section" class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Explora por género</h2>
+          </div>
+          <div id="genresList" class="genre-list"></div>
+        </div>
+      </section>
+
+      <!-- MODAL DE LOGIN -->
+      <div id="loginModal" class="modal-overlay" style="display: none">
+        <div class="modal-content">
+          <button id="closeLoginModal" class="close-btn">&times;</button>
+          <h2>Iniciar Sesión</h2>
+          <div id="loginError" class="error-text" style="display: none"></div>
+          <form id="loginForm">
+            <div class="form-group">
+              <label>Usuario</label>
+              <input type="text" id="username" required />
             </div>
-        </section>
+            <div class="form-group">
+              <label>Contraseña</label>
+              <input type="password" id="password" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+          </form>
+        </div>
+      </div>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p>© 2026 MangaCo — Catálogo de cómics y manga</p>
-            <p class="footer-sub">Hecho con ❤️ y Spring Boot + HTML/CSS/JS</p>
-        </div>
+      <div class="container">
+        <p>© 2026 MangaCo — Catálogo de cómics y manga</p>
+        <p class="footer-sub">Hecho con ❤️ y Spring Boot + HTML/CSS/JS</p>
+      </div>
     </footer>
 
     <div id="loading" class="loading hidden">
-        <div class="spinner"></div>
+      <div class="spinner"></div>
     </div>
 
+    <!-- Servicios y utilidades -->
     <script src="src/utils/domUtils.js"></script>
+    <script src="src/utils/authUtils.js"></script>
+
+    <!-- ¡AÑADE ESTOS DOS! -->
+    <script src="src/services/authService.js"></script>
+    <script src="src/controllers/loginController.js"></script>
+
+    <!-- Resto de servicios -->
     <script src="src/services/authorService.js"></script>
     <script src="src/services/comicService.js"></script>
     <script src="src/services/seriesService.js"></script>
@@ -101,5 +148,5 @@
     <script src="src/services/searchService.js"></script>
     <script src="src/controllers/homeController.js"></script>
     <script src="src/controllers/searchController.js"></script>
-</body>
+  </body>
 </html>
