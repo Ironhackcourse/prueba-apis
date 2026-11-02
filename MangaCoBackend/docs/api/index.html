@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>Documentación de la API REST — MangaCo Backend</h1>
+<p>Documentación oficial de los endpoints del backend <strong>MangaCo</strong> (Spring Boot),
+generada con <strong>JavaScript + Node.js + JSDoc</strong>.</p>
+<p>Este directorio reemplaza a la documentación Javadoc que se generaba en
+<code>target/site/apidocs/</code>.</p>
+<h2>¿Cómo funciona?</h2>
+<ol>
+<li><code>generate-api-references.js</code> lee los controladores REST de Spring Boot
+(<code>src/main/java/com/xavier/MangaCoBackend/controller/*.java</code>), extrae la
+ruta base de cada <code>@RequestMapping</code>, el verbo HTTP y la ruta de cada
+endpoint, y escribe <code>api-references.js</code> con bloques JSDoc.</li>
+<li>JSDoc procesa <code>api-references.js</code> y genera el sitio HTML en <code>docs/api/</code>.</li>
+</ol>
+<p>La lista de endpoints se deriva del <strong>código Java real</strong>, por lo que la
+documentación no se desincroniza al añadir o modificar controladores.</p>
+<h2>Generación</h2>
+<pre class="prettyprint source lang-bash"><code>cd MangaCoBackend/docs
+npm install          # instala JSDoc (solo la primera vez)
+npm run docs         # regenera api-references.js y el sitio HTML
+</code></pre>
+<p>O bien desde la raíz del backend, con el perfil Maven <code>docs</code>:</p>
+<pre class="prettyprint source lang-bash"><code>cd MangaCoBackend
+./mvnw -Pdocs verify
+</code></pre>
+<p>La salida HTML queda en <code>MangaCoBackend/docs/api/index.html</code>.</p>
+<h2>Estructura</h2>
+<pre class="prettyprint source"><code>MangaCoBackend/docs/
+├── generate-api-references.js   # Script Node que lee los controllers .java
+├── api-references.js            # Referencias JSDoc autogeneradas (no editar)
+├── jsdoc.json                   # Configuración de JSDoc
+├── package.json                 # Tooling Node (JSDoc)
+├── README.md                    # Este archivo (portada de la doc)
+├── tutorials/
+│   └── introduccion.markdown    # Tutorial introductorio (@tutorial)
+└── api/                         # Sitio HTML generado (ignorado por git)
+</code></pre>
+<h2>Recursos de la API</h2>
+<p>Todos los endpoints cuelgan de <code>/api/v1</code>. La convención de rutas es:</p>
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Ruta base</th>
+<th>Filtros especiales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Autores</td>
+<td><code>/api/v1/authors</code></td>
+<td><code>GET /country/{countryId}</code></td>
+</tr>
+<tr>
+<td>Cómics</td>
+<td><code>/api/v1/comics</code></td>
+<td><code>GET /series/{seriesId}</code></td>
+</tr>
+<tr>
+<td>Series</td>
+<td><code>/api/v1/series</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>Editoriales</td>
+<td><code>/api/v1/publishers</code></td>
+<td><code>GET /country/{countryId}</code></td>
+</tr>
+<tr>
+<td>Categorías</td>
+<td><code>/api/v1/categories</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>Clasificaciones</td>
+<td><code>/api/v1/classifications</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>Formatos</td>
+<td><code>/api/v1/formats</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>Géneros</td>
+<td><code>/api/v1/genres</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>Países</td>
+<td><code>/api/v1/countries</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>Roles</td>
+<td><code>/api/v1/roles</code></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>Cada recurso expone el CRUD estándar:</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Ruta</th>
+<th>Descripción</th>
+<th>Respuesta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><code>/{base}</code></td>
+<td>Lista todos (con filtros opcionales)</td>
+<td><code>200 OK</code></td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/{base}/{id}</code></td>
+<td>Obtiene uno por id</td>
+<td><code>200 OK</code> / <code>404</code></td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/{base}</code></td>
+<td>Crea un elemento</td>
+<td><code>201 Created</code> / <code>400</code></td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><code>/{base}/{id}</code></td>
+<td>Actualiza completamente</td>
+<td><code>200 OK</code> / <code>400</code> / <code>404</code></td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><code>/{base}/{id}/enable</code></td>
+<td>Reactiva un elemento</td>
+<td><code>200 OK</code> / <code>404</code></td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><code>/{base}/{id}</code></td>
+<td>Elimina un elemento</td>
+<td><code>204 No Content</code> / <code>404</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Ejecución del backend</h2>
+<p>El backend se ejecuta con Maven:</p>
+<pre class="prettyprint source lang-bash"><code>cd MangaCoBackend
+./mvnw spring-boot:run
+</code></pre>
+<p>Por defecto queda escuchando en <code>http://localhost:8080</code>.</p>
+<h2>Autor</h2>
+<p>MangaCo Team</p></article>
+    </section>
+
+
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>api-references.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">Referencias de la API REST de MangaCo (autogenerado).
+
+Este archivo se genera automáticamente a partir de los controladores
+de Spring Boot mediante `npm run docs`. No editar a mano.</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>1.0.0</li></ul></dd>
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>2026-10-21</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>MangaCo Team</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api-references.js.html">api-references.js</a>, <a href="api-references.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+    <dt class="tag-tutorial">Tutorials:</dt>
+    <dd class="tag-tutorial">
+        <ul>
+            <li><a href="tutorial-introduccion.html">introduccion</a></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-authorController.html">authorController</a></li><li><a href="module-categoryController.html">categoryController</a></li><li><a href="module-classificationController.html">classificationController</a></li><li><a href="module-comicController.html">comicController</a></li><li><a href="module-countryController.html">countryController</a></li><li><a href="module-formatController.html">formatController</a></li><li><a href="module-genreController.html">genreController</a></li><li><a href="module-publisherController.html">publisherController</a></li><li><a href="module-roleController.html">roleController</a></li><li><a href="module-seriesController.html">seriesController</a></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-introduccion.html">introduccion</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Wed Oct 21 2026 01:03:12 GMT+0200 (hora de verano de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
