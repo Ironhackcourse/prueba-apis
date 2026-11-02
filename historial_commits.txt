@@ -1,0 +1,8 @@
+* daf7841 Add login in Frontend
+* c3e7acb Update .gitignore
+* 5aa24bb Add function login
+* ed442d7 Optimizacion de documentacion
+* 9ed4673 Pequeños arreglos extra a las funcionalidades del frontend
+* 018ddf2 Añadir funciones CRUD al frontend y backend
+* 875eaed first commit
+* d635ae8 Nuevas funciones CRUD en el frontend
